@@ -1,0 +1,31 @@
+Source: budgie-lightpad-applet
+Section: misc
+Priority: optional
+Maintainer: David Mohammed <fossfreedom@ubuntu.com>
+Build-Depends:
+ budgie-core-dev,
+ debhelper (>= 11),
+ debhelper-compat (= 11),
+ libbudgie-plugin0,
+ libglib2.0-dev,
+ libgtk-3-dev,
+ libpeas-dev,
+ meson,
+ valac,
+Standards-Version: 4.5.0
+Vcs-Browser: https://github.com/UbuntuBudgie/budgie-lightpad-applet/tree/debian
+Vcs-Git: https://github.com/UbuntuBudgie/budgie-lightpad-applet -b debian
+Homepage: https://ubuntubudgie.org
+
+Package: budgie-lightpad-applet
+Architecture: any
+Depends: lightpad, ${misc:Depends}, ${shlibs:Depends}
+Description: Stylish Fullscreen Application Launcher for Budgie-Desktop
+ Budgie-Desktop is a GTK+ based desktop environment which focuses on
+ simplicity and elegance.  It provides a traditional desktop metaphor
+ based interface utilising customisable panel based menu driven system.
+ Budgie-Desktop is written from scratch utilising many GNOME based
+ sub-systems such as GNOME-Session and Mutter.
+ .
+ Budgie Lightpad is a stylish panel applet that displays applications
+ in a fullscreen desktop view.

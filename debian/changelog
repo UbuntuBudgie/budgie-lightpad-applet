@@ -1,0 +1,11 @@
+budgie-lightpad-applet (0.0.2~focal) focal; urgency=medium
+
+  * Fix showing budgie settings
+
+ -- David Mohammed <fossfreedom@ubuntu.com>  Tue, 23 Jun 2020 23:09:55 +0100
+
+budgie-lightpad-applet (0.0.1~bionic1) bionic; urgency=medium
+
+  * Initial Release
+
+ -- David Mohammed <fossfreedom@ubuntu.com>  Wed, 17 Jun 2020 16:02:48 +0100
