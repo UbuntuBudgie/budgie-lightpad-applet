@@ -3,6 +3,6 @@ Module=lightpad.so
 Name=Lightpad
 Description=Desktop Overview Launcher
 Authors=David Mohammed
-Copyright=© 2020 Ubuntu Budgie Developers
+Copyright=© 2020-2025 Ubuntu Budgie Developers
 Website=https://ubuntubudgie.org
 Icon=view-grid-symbolic
