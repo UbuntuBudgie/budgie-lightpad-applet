@@ -1,4 +1,4 @@
-budgie-lightpad-applet (0.0.3~plucky) plucky; urgency=medium
+budgie-lightpad-applet (0.0.3+20250505~plucky) plucky; urgency=medium
 
   * Bump build for budgie-wayland
 
