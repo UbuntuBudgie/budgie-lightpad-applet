@@ -1,3 +1,9 @@
+budgie-lightpad-applet (0.0.3~plucky) plucky; urgency=medium
+
+  * Bump build for budgie-wayland
+
+ -- David Mohammed <fossfreedom@ubuntu.com>  Mon, 05 May 2025 22:05:28 +0100
+
 budgie-lightpad-applet (0.0.2~focal) focal; urgency=medium
 
   * Fix showing budgie settings
