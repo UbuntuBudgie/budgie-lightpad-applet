@@ -31,6 +31,6 @@ gtk_dep = dependency('gtk+-3.0')
 gobject_dep = dependency('gobject-2.0')
 gio_unix_dep = dependency('gio-unix-2.0')
 budgie_dep = dependency('budgie-2.0')
-peas_dep = dependency('libpeas-gtk-1.0')
+peas_dep = dependency('libpeas-2')
 
 subdir('src')

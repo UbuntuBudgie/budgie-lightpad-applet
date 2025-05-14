@@ -13,7 +13,7 @@ This project is a prerequisite.
 You'll need the following dependencies:
 * libgtk-3-dev
 * budgie-core-dev
-* libpeas-dev
+* libpeas-2-dev
 * meson
 * valac
 

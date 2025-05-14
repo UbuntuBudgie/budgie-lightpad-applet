@@ -23,16 +23,16 @@ namespace LightpadApplet {
     {
 
         [GtkChild]
-        private Gtk.Switch? switch_menu_label;
+        private unowned Gtk.Switch? switch_menu_label;
 
         [GtkChild]
-        private Gtk.Entry? entry_label;
+        private unowned Gtk.Entry? entry_label;
 
         [GtkChild]
-        private Gtk.Entry? entry_icon_pick;
+        private unowned Gtk.Entry? entry_icon_pick;
 
         [GtkChild]
-        private Gtk.Button? button_icon_pick;
+        private unowned Gtk.Button? button_icon_pick;
 
         private GLib.Settings? settings;
 
@@ -127,7 +127,12 @@ namespace LightpadApplet {
                 if (e.button != 1) {
                     return Gdk.EVENT_PROPAGATE;
                 }
-                Process.spawn_command_line_async("com.github.libredeb.lightpad");
+                try {
+                    Process.spawn_command_line_async("com.github.libredeb.lightpad");
+                }
+                catch (Error e) {
+                    critical("unable to spawn lightpad: %s", e.message);
+                }
                 return Gdk.EVENT_STOP;
             });
             add(widget);
@@ -195,7 +200,12 @@ namespace LightpadApplet {
 
         public override void invoke_action(Budgie.PanelAction action) {
             if ((action & Budgie.PanelAction.MENU) != 0) {
-                Process.spawn_command_line_async("com.github.libredeb.lightpad");
+                try {
+                    Process.spawn_command_line_async("com.github.libredeb.lightpad");
+                }
+                catch (Error e) {
+                    critical("unable to spawn lightpad: %s", e.message);
+                }
             }
         }
 
