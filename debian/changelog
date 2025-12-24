@@ -1,3 +1,15 @@
+budgie-lightpad-applet (0.1.0~0ubuntu1~resolute) resolute; urgency=medium
+
+  * Update the budgie dependency for the build against 10.10 preview.2
+
+ -- David Mohammed <fossfreedom@ubuntu.com>  Wed, 24 Dec 2025 20:02:39 +0000
+
+budgie-lightpad-applet (0.0.3+20250514~plucky1) plucky; urgency=medium
+
+  * Rebuild for libpeas-2
+
+ -- David Mohammed <fossfreedom@ubuntu.com>  Wed, 14 May 2025 20:40:43 +0100
+
 budgie-lightpad-applet (0.0.3+20250505~plucky) plucky; urgency=medium
 
   * Bump build for budgie-wayland

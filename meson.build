@@ -1,7 +1,7 @@
 project(
   'budgie_lightpad',
   'vala', 'c',
-  version : '0.0.3',
+  version : '0.1.0',
   default_options: [
         'c_std=c11',
         'warning_level=3'
@@ -30,7 +30,7 @@ gio_dep = dependency('gio-2.0')
 gtk_dep = dependency('gtk+-3.0')
 gobject_dep = dependency('gobject-2.0')
 gio_unix_dep = dependency('gio-unix-2.0')
-budgie_dep = dependency('budgie-2.0')
+budgie_dep = dependency('budgie-3.0')
 peas_dep = dependency('libpeas-2')
 
 subdir('src')
