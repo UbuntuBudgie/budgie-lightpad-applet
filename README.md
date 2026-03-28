@@ -19,10 +19,12 @@ You'll need the following dependencies:
 
 Run `meson` to configure the build environment and then `ninja` to build
 
-    meson build --prefix=/usr --libdir=/usr/lib
+    meson build --prefix=/usr
     cd build
     ninja
 
 To install, use `ninja install`
 
     sudo ninja install
+
+Optionally ship ImageMagick so that "convert" is available.  If installed then your background image will be blurred for the display.
