@@ -128,7 +128,7 @@ namespace LightpadApplet {
                     return Gdk.EVENT_PROPAGATE;
                 }
                 try {
-                    Process.spawn_command_line_async("com.github.libredeb.lightpad");
+                    Process.spawn_command_line_async("io.github.libredeb.lightpad");
                 }
                 catch (Error e) {
                     critical("unable to spawn lightpad: %s", e.message);
@@ -201,7 +201,7 @@ namespace LightpadApplet {
         public override void invoke_action(Budgie.PanelAction action) {
             if ((action & Budgie.PanelAction.MENU) != 0) {
                 try {
-                    Process.spawn_command_line_async("com.github.libredeb.lightpad");
+                    Process.spawn_command_line_async("io.github.libredeb.lightpad");
                 }
                 catch (Error e) {
                     critical("unable to spawn lightpad: %s", e.message);

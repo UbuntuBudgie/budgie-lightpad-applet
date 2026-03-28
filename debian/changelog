@@ -1,3 +1,9 @@
+budgie-lightpad-applet (0.1.1~0ubuntu1~resolute) resolute; urgency=medium
+
+  * Switch to using new lightpad executable name for v0.1.0
+
+ -- David Mohammed <fossfreedom@ubuntu.com>  Sat, 28 Mar 2026 22:50:59 +0000
+
 budgie-lightpad-applet (0.1.0~0ubuntu1~resolute) resolute; urgency=medium
 
   * Update the budgie dependency for the build against 10.10 preview.2
