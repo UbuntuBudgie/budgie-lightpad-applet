@@ -52,7 +52,7 @@ namespace LightpadApplet {
 
 	/** Gaussian blur applied via ImageMagick: radius x sigma */
 	const string IMAGEMAGICK_BLUR_PARAM = "0x8";
-	const string IMAGEMAGICK_EXECUTABLE = "convert";
+	string? imagemagick_cmd;
 
 	/** Divisor for the GDK pixbuf scale-down fallback blur */
 	const int    PIXBUF_BLUR_DIVISOR = 8;
@@ -162,8 +162,25 @@ namespace LightpadApplet {
 			cached_bg_path     = GLib.Path.build_filename(cache_dir, LIGHTPAD_BG_FILENAME);
 			source_marker_path = GLib.Path.build_filename(cache_dir, LIGHTPAD_BG_MARKER);
 
+			resolve_imagemagick_cmd();
 			build_widget();
 			setup_wallpaper_monitor();
+		}
+
+		/**
+		 * Cater for v7 and pre v7 forms of the imagemagick utility
+		 */
+
+		private void resolve_imagemagick_cmd() {
+			imagemagick_cmd = GLib.Environment.find_program_in_path("magick");
+
+			if (imagemagick_cmd == null) {
+				imagemagick_cmd = GLib.Environment.find_program_in_path("convert");
+			}
+
+			if (imagemagick_cmd == null) {
+				warning("Neither 'magick' nor 'convert' found in PATH");
+			}
 		}
 
 		/**
@@ -436,7 +453,7 @@ namespace LightpadApplet {
 		 * GDK pixbuf scale-down/up approximation when convert is unavailable.
 		 */
 		private void blur_cached_background() {
-			if (GLib.Environment.find_program_in_path(IMAGEMAGICK_EXECUTABLE) != null) {
+			if (imagemagick_cmd != null) {
 				blur_with_imagemagick();
 			} else {
 				blur_with_pixbuf();
@@ -452,7 +469,7 @@ namespace LightpadApplet {
 				int exit_status;
 				GLib.Process.spawn_sync(
 					null,
-					{ IMAGEMAGICK_EXECUTABLE, cached_bg_path, "-blur", IMAGEMAGICK_BLUR_PARAM, cached_bg_path },
+					{ imagemagick_cmd, cached_bg_path, "-blur", IMAGEMAGICK_BLUR_PARAM, cached_bg_path },
 					null,
 					GLib.SpawnFlags.SEARCH_PATH,
 					null, null, null,
@@ -460,7 +477,7 @@ namespace LightpadApplet {
 				);
 				if (exit_status != 0) {
 					warning("%s returned non-zero status while blurring background",
-							IMAGEMAGICK_EXECUTABLE);
+							imagemagick_cmd);
 				}
 			} catch (Error e) {
 				warning("ImageMagick blur failed: %s", e.message);
