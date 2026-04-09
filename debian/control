@@ -20,7 +20,7 @@ Homepage: https://ubuntubudgie.org
 Package: budgie-lightpad-applet
 Architecture: any
 Depends:
- graphicsmagick-imagemagick-compat,
+ imagemagick-7.q16,
  lightpad,
  ${misc:Depends},
  ${shlibs:Depends},
